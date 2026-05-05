@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: insulife-api
-    # Use Dockerfile to control Python runtime and avoid in-build source builds
-    dockerfilePath: backend/Dockerfile
-    envVars:
-      - key: MODEL_PATH
-        value: model.pkl

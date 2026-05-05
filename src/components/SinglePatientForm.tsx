@@ -6,25 +6,19 @@ import { predict, PredictionResult, FEATURES, PatientInput } from "@/lib/predict
 import { Loader2, Sparkles } from "lucide-react";
 
 const FIELDS: { key: keyof PatientInput; label: string; step?: string; placeholder: string }[] = [
-  { key: "Age", label: "Age (years)", placeholder: "e.g. 35" },
-  { key: "Sex", label: "Sex (0=Female, 1=Male)", placeholder: "e.g. 1" },
+  { key: "Pregnancies", label: "Pregnancies", placeholder: "e.g. 2" },
   { key: "Glucose", label: "Glucose (mg/dL)", placeholder: "e.g. 120" },
-  { key: "BMI", label: "BMI", step: "0.1", placeholder: "e.g. 28.5" },
   { key: "BloodPressure", label: "Blood Pressure (mm Hg)", placeholder: "e.g. 70" },
-  { key: "Insulin", label: "Insulin (μU/mL)", placeholder: "e.g. 80" },
   { key: "SkinThickness", label: "Skin Thickness (mm)", placeholder: "e.g. 20" },
+  { key: "Insulin", label: "Insulin (μU/mL)", placeholder: "e.g. 80" },
+  { key: "BMI", label: "BMI", step: "0.1", placeholder: "e.g. 28.5" },
   { key: "DiabetesPedigreeFunction", label: "Diabetes Pedigree", step: "0.001", placeholder: "e.g. 0.471" },
+  { key: "Age", label: "Age", placeholder: "e.g. 35" },
 ];
 
 const DEFAULTS: PatientInput = {
-  Age: 35,
-  Sex: 1,
-  Glucose: 120,
-  BMI: 28.5,
-  BloodPressure: 70,
-  Insulin: 80,
-  SkinThickness: 20,
-  DiabetesPedigreeFunction: 0.471,
+  Pregnancies: 1, Glucose: 120, BloodPressure: 70, SkinThickness: 20,
+  Insulin: 80, BMI: 28.5, DiabetesPedigreeFunction: 0.471, Age: 33,
 };
 
 export const SinglePatientForm = () => {
