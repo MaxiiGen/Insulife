@@ -18,6 +18,8 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy backend code
 COPY backend /app
+# Copy model file into image so backend can load it at startup (if present)
+COPY model.pkl /app/model.pkl
 
 EXPOSE 8000
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
