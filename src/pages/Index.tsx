@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SinglePatientForm } from "@/components/SinglePatientForm";
 import { BulkUpload } from "@/components/BulkUpload";
-import succulent from "@/assets/succulent.png";
+import heroImage from "@/assets/glucose-monitor.png";
 import { User, Users, Activity } from "lucide-react";
 
 type Mode = "single" | "bulk";
@@ -16,7 +16,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-[image:var(--gradient-leaf)] opacity-70" />
         <nav className="relative z-10 mx-auto flex max-w-6xl items-center justify-between">
           <div className="flex items-center gap-2 font-display text-xl font-bold lowercase tracking-wide">
-            <Activity className="h-5 w-5" /> diabeta
+            <Activity className="h-5 w-5" /> insulife
           </div>
           <div className="text-xs uppercase tracking-[0.3em] opacity-70">XGBoost · ONNX</div>
         </nav>
@@ -36,8 +36,8 @@ const Index = () => {
           </div>
           <div className="relative flex justify-center md:justify-end">
             <img
-              src={succulent}
-              alt="Botanical illustration"
+              src={heroImage}
+              alt="Glucose monitor device"
               width={420}
               height={420}
               className="drop-shadow-2xl"
