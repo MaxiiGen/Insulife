@@ -62,7 +62,9 @@ def predict_dataframe(model, df: pd.DataFrame) -> pd.DataFrame:
     X = X[EXPECTED_COLUMNS]
     # Map Sex to numeric if needed
     if X["Sex"].dtype == object:
-        X["Sex"] = X["Sex"].str.lower().map({"male": 1, "m": 1, "female": 0, "f": 0}).fillna(-1)
+        X["Sex"] = X["Sex"].str.lower().map({"male": 1, "m": 1, "female": 0, "f": 0}).fillna(-1).astype(int)
+    else:
+        X["Sex"] = X["Sex"].astype(int)
     # Predict
     if hasattr(model, "predict_proba"):
         probs = model.predict_proba(X)[:, 1]
@@ -102,9 +104,10 @@ def main():
             dpf = st.number_input("DiabetesPedigreeFunction", min_value=0.0, value=0.5)
 
         if st.button("Predict"):
+            sex_map = {"Female": 0, "Male": 1, "Other": -1}
             row = pd.DataFrame([{
                 "Age": age,
-                "Sex": sex,
+                "Sex": sex_map.get(sex, -1),
                 "Glucose": glucose,
                 "BMI": bmi,
                 "BloodPressure": blood_pressure,
