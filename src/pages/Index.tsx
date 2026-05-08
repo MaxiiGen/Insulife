@@ -33,20 +33,6 @@ const Index = () => {
 
         <div className="relative z-10 mx-auto mt-16 grid max-w-6xl items-center gap-10 md:mt-20 md:grid-cols-[1.1fr_1fr]">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/5 p-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
-              <ModeChip
-                active={mode === "single"}
-                onClick={() => setMode("single")}
-                icon={<User className="h-4 w-4" />}
-                label="Single patient"
-              />
-              <ModeChip
-                active={mode === "bulk"}
-                onClick={() => setMode("bulk")}
-                icon={<Users className="h-4 w-4" />}
-                label="Bulk CSV upload"
-              />
-            </div>
             <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.3em]">
               <span className="h-1 w-1 rounded-full bg-cream" />
               Clinical decision support
@@ -80,7 +66,24 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="mx-auto -mt-16 max-w-6xl px-6 pb-20 md:px-12">
+      <main className="mx-auto relative z-20 mt-12 max-w-6xl px-6 pb-20 md:px-12">
+        <div className="mx-auto mb-8 flex items-center justify-center">
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-primary-foreground/20 bg-primary-foreground/5 p-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+            <ModeChip
+              active={mode === "single"}
+              onClick={() => setMode("single")}
+              icon={<User className="h-4 w-4" />}
+              label="Single patient"
+            />
+            <ModeChip
+              active={mode === "bulk"}
+              onClick={() => setMode("bulk")}
+              icon={<Users className="h-4 w-4" />}
+              label="Bulk CSV upload"
+            />
+          </div>
+        </div>
+
         {mode === "single" ? <SinglePatientForm /> : <BulkUpload />}
 
         <footer className="mt-20 flex flex-col items-center gap-2 border-t border-border pt-8 text-center text-xs text-muted-foreground">

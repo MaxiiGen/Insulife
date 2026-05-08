@@ -125,7 +125,7 @@ export const BulkUpload = () => {
                     <th key={f} className="px-3 py-2 text-left font-semibold">{f}</th>
                   ))}
                   <th className="px-3 py-2 text-left">Risk %</th>
-                  <th className="px-3 py-2 text-left">Class</th>
+                  <th className="px-3 py-2 text-left min-w-[88px]">Class</th>
                 </tr>
               </thead>
               <tbody>
@@ -140,7 +140,7 @@ export const BulkUpload = () => {
                     </td>
                     <td className="px-3 py-2">
                       <span
-                        className="rounded-full px-2.5 py-1 text-xs font-bold text-primary-foreground"
+                        className="inline-flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-bold text-primary-foreground whitespace-nowrap min-w-[72px]"
                         style={{
                           background:
                             r.__result?.label === "HIGH RISK"
