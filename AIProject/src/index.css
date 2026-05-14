@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 88 18% 92%;
+    --foreground: 120 18% 14%;
+
+    --card: 60 20% 97%;
+    --card-foreground: 120 18% 14%;
+
+    --popover: 60 20% 97%;
+    --popover-foreground: 120 18% 14%;
+
+    --primary: 122 22% 32%;
+    --primary-foreground: 60 30% 96%;
+    --primary-glow: 122 28% 42%;
+
+    --secondary: 88 22% 82%;
+    --secondary-foreground: 120 22% 18%;
+
+    --muted: 88 18% 88%;
+    --muted-foreground: 120 10% 38%;
+
+    --accent: 60 28% 92%;
+    --accent-foreground: 122 22% 24%;
+
+    --cream: 48 38% 92%;
+    --cream-foreground: 122 22% 24%;
+
+    --risk-high: 8 72% 48%;
+    --risk-low: 122 38% 38%;
+
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 60 30% 96%;
+
+    --border: 88 14% 78%;
+    --input: 88 14% 82%;
+    --ring: 122 22% 32%;
+
+    --radius: 1.25rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(122 22% 32%), hsl(122 28% 22%));
+    --gradient-leaf: radial-gradient(ellipse at top right, hsl(122 32% 42% / 0.4), transparent 60%);
+    --shadow-soft: 0 10px 40px -12px hsl(122 30% 18% / 0.25);
+    --shadow-card: 0 4px 20px -8px hsl(122 30% 18% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+}
